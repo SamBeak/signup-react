@@ -4,9 +4,12 @@ import SignModalComponent from './user/SignModalComponent';
 
 export default function HeaderComponent() {
   const [isSignModal, setIsSignModal] = React.useState(false);
+
   const onClickSignModal = () => {
     setIsSignModal(!isSignModal);
   };
+
+
   return (
     <>
       <header id="header">
@@ -34,7 +37,7 @@ export default function HeaderComponent() {
           </div>
         </div>
         {
-          isSignModal ? <SignModalComponent /> : null
+          isSignModal ? <SignModalComponent setIsSignModal = {setIsSignModal} /> : null
         }
       </header>
       <Outlet />
