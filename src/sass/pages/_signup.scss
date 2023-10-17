@@ -17,10 +17,12 @@
                         transform: translateY(1rem);
                         opacity: 0.5;
                         color: #908e9b;
-                        font-size: 0.75rem;
+                        font-size: 1rem;
+                        transition: all 0.3s ease-in-out;
                         &.active{
                             color: #565360;
-                            font-size: 1rem;
+                            font-size: 0.75rem;
+                            transform: translate(-1rem, -0.75rem);
                         }
                     }
                     >input{
@@ -29,6 +31,24 @@
                         border: 1px solid #f2f5f5;
                         border-radius: 10px;
                         padding-left: 1rem;
+                        outline: none;
+                        outline-offset: -1px;
+                    }
+                }
+            }
+            .btn__box{
+                width: 100%;
+                >.submit__btn{
+                    width: 100%;
+                    height: 2.5rem;
+                    border-radius: 1rem;
+                    border: 1px solid #f2f5f5;
+                    background: linear-gradient(45deg, #5f0080, #a700ff);
+                    color: #fff;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    &:hover{
+                        background: linear-gradient(45deg, #a700ff, #5f0080);
                     }
                 }
             }
