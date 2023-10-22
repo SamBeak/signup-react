@@ -1,0 +1,18 @@
+// SignupComponent, notification fade-in
+@keyframes fade-in {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    95% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+// SignupComponent, notification progress bar
+@keyframes progress {
+    to {
+        transform: scaleX(1);
+    }
+}

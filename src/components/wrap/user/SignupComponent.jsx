@@ -1,7 +1,8 @@
 import React from 'react';
 
-export default function SignupComponent({signup}) {
+export default function SignupComponent({signup, setIsSignModal}) {
     const [state, setState] = React.useState(signup);
+    const [isSignupProgressbar, setIsSignupProgressbar] = React.useState(false);
 
     // 라벨 이동 이벤트 231017_bhg
     const onMoveLabel = (e) => {
@@ -16,17 +17,23 @@ export default function SignupComponent({signup}) {
         });
     };
 
+    // 회원가입 버튼 클릭 이벤트 231023_bhg
+    const onClickSignup = (e) => {
+        e.preventDefault();
+        setIsSignupProgressbar(true);
+        setTimeout(() => {
+            setIsSignModal(false);
+        }, 3300);
+    }
+
     // 정규표현식 아이디 유효성 검사 231018_bhg
     const onChangeId = (e) => {
         const {value} = e.target;
         const regExp1 = /[`~!@#$%^&*()\-_=+[{\]}\\|;:'",<.>/?]/g;
-        const regExp2 = /[a-zA-Z]*+[0-9]*/g; // 영문 + 숫자
 
         let userId = '';
         let isIdErr = false;
         let isIdMsg = '';
-
-        userId = value.replace(regExp1, '');
     };
   return (
     <div id="signup">
@@ -44,8 +51,18 @@ export default function SignupComponent({signup}) {
                     <li className="signup__item"><label htmlFor="userBirth">생년월일</label><input type="text" id="userBirth" onFocus={onMoveLabel} /></li>
                 </ul>
                 <div className="btn__box">
-                    <button className="submit__btn">회원가입</button>
+                    <button className="submit__btn" onClick={onClickSignup}>회원가입</button>
                 </div>
+                {
+                    isSignupProgressbar ? 
+                        <div className="notification">
+                            <div className="notification__body">
+                                <img src="" alt="" className='notification__icon' />
+                                Your account has been created! &#128640;
+                            </div>
+                            <div className="notification__progress"></div>
+                        </div> : null
+                }
             </div>
         </div>
     </div>

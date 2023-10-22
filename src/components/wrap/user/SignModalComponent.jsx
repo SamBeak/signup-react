@@ -36,7 +36,7 @@ export default function SignModalComponent( {setIsSignModal} ) {
                 </div>
                 <div className="content">
                     {
-                        isSignin ? <SigninComponent /> : <SignupComponent />
+                        isSignin ? <SigninComponent /> : <SignupComponent setIsSignModal={setIsSignModal} />
                     }
                 </div>
             </div>
