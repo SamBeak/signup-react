@@ -2,8 +2,7 @@ import React from 'react';
 import SigninComponent from './SigninComponent';
 import SignupComponent from './SignupComponent';
 
-export default function SignModalComponent( {setIsSignModal} ) {
-    const [isSignin, setIsSignin] = React.useState(false);
+export default function SignModalComponent( {setIsSignModal, isSignin, setIsSignin} ) {
 
     // 로그인 / 회원가입 버튼 클릭 => 색상 변경 => 현재 카테고리 식별 231011_bhg
     const onClickSignModal = (e) => {

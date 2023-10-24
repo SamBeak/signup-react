@@ -4,8 +4,10 @@ import SignModalComponent from './user/SignModalComponent';
 
 export default function HeaderComponent() {
   const [isSignModal, setIsSignModal] = React.useState(false);
+  const [isSignin, setIsSignin] = React.useState(false);
 
-  const onClickSignModal = () => {
+  const onClickSignModal = (e) => {
+    e.target.innerText === '로그인' ? setIsSignin(true) : setIsSignin(false);
     setIsSignModal(!isSignModal);
   };
 
@@ -37,7 +39,7 @@ export default function HeaderComponent() {
           </div>
         </div>
         {
-          isSignModal ? <SignModalComponent setIsSignModal = {setIsSignModal} /> : null
+          isSignModal ? <SignModalComponent setIsSignModal = {setIsSignModal} isSignin={isSignin} setIsgnin={setIsSignin} /> : null
         }
       </header>
       <Outlet />
