@@ -57,7 +57,7 @@ export default function SignupComponent({signup, setIsSignModal}) {
                     isSignupProgressbar ? 
                         <div className="notification">
                             <div className="notification__body">
-                                <img src="" alt="" className='notification__icon' />
+                                <img src="./images/check-circle.svg" alt="" className='notification__icon' />
                                 Your account has been created! &#128640;
                             </div>
                             <div className="notification__progress"></div>
